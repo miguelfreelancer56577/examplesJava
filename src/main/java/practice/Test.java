@@ -1,29 +1,27 @@
 package practice;
 
-import org.springframework.web.client.RestTemplate;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import practice.model.User;
+import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		ObjectMapper mp = new ObjectMapper();
-		User user = new User("Miguel", "Torres");
-		user.setName("Luis");
-		user.setSurname("Martinez");
-		try {
-			System.out.println(mp.writeValueAsString(user));
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally{
-			System.out.println("block finally ...");
-		}
-		System.out.println("ended the application ...");
+		display();
+		System.out.println("Ended applicaction....");
 	}
+	
+	static void display() throws IOException{
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("hit a keyword");
+		String in = bf.readLine();
+	}
+	
 
 }
