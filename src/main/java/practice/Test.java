@@ -36,9 +36,10 @@ public class Test {
 					break;
 					
 				case 2:
-						System.out.println("Extracting, please wait");
+//						System.out.println("Extracting, please wait");
 						try {
-							System.out.println(account.extract());
+							System.out.println("Enter an amount");
+							System.out.println(account.extract(in.nextDouble()));
 						} catch (AccountException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -76,9 +77,13 @@ class Account{
 		setBalance(balance);
 	}
 	
-	double extract() throws AccountException{
-		if(getBalance() <= 0){
+	double extract(double balance) throws AccountException{
+		if(this.balance <= 0){
 			throw new AccountException("Without balance");
+		}else if(balance <= this.balance){
+			this.balance -= balance;
+		}else if(balance > this.balance){
+			throw new AccountException("the amount is major of your balance");
 		}
 		return getBalance();
 	}
