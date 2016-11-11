@@ -29,10 +29,9 @@ public class Test {
 						System.out.println("Enter Balance, please");
 						try {
 							account.add(in.nextDouble());
-						} catch (Exception e1) {
+						} catch (AccountException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
-							System.out.println("Enter a correct balance");
 						}
 					break;
 					
@@ -40,10 +39,9 @@ public class Test {
 						System.out.println("Extracting, please wait");
 						try {
 							System.out.println(account.extract());
-						} catch (Exception e) {
+						} catch (AccountException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
-							System.out.println("Without balance");
 						}
 					break;
 
@@ -67,22 +65,29 @@ class Account{
 		return balance;
 	}
 
-	private void setBalance(double balance) throws Exception {
+	private void setBalance(double balance) throws AccountException {
 		if(balance <= 0){
-			throw new Exception();
+			throw new AccountException("Enter a correct balance");
 		}
 		this.balance += balance;
 	}
 	
-	void add(double balance) throws Exception{
+	void add(double balance) throws AccountException{
 		setBalance(balance);
 	}
 	
-	double extract() throws Exception{
+	double extract() throws AccountException{
 		if(getBalance() <= 0){
-			throw new Exception();
+			throw new AccountException("Without balance");
 		}
 		return getBalance();
 	}
 	
+}
+
+class AccountException extends Exception{
+	public AccountException(String msg) {
+		// TODO Auto-generated constructor stub
+		super(msg);
+	}
 }
