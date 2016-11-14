@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Test {
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws AccountException{
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
 		Account account = new Account();
@@ -27,23 +27,23 @@ public class Test {
 			
 				case 1:
 						System.out.println("Enter Balance, please");
-						try {
+//						try {
 							account.add(in.nextDouble());
-						} catch (AccountException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
+//						} catch (AccountException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
 					break;
 					
 				case 2:
 //						System.out.println("Extracting, please wait");
-						try {
+//						try {
 							System.out.println("Enter an amount");
 							System.out.println(account.extract(in.nextDouble()));
-						} catch (AccountException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+//						} catch (AccountException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
 					break;
 
 				default:
