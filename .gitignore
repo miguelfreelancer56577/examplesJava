@@ -18,6 +18,14 @@ local.properties
 .classpath
 .settings/
 .loadpath
+
+#------------------------------
+# Nodejs
+#------------------------------
+node_modules/**
+node_modules/*
+node_modules/
+
  
 # Locally stored "Eclipse launch configurations"
 *.launch
