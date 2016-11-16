@@ -5,6 +5,7 @@
  */
 package practice.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -12,7 +13,7 @@ import java.util.Hashtable;
  *
  * @author SPPDF
  */
-public class Agenda {
+public class Agenda implements Serializable {
     
     private Hashtable<String,Persona> personas;
     

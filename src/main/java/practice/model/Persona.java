@@ -5,6 +5,7 @@
  */
 package practice.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
@@ -12,7 +13,7 @@ import java.util.Objects;
  *
  * @author SPPDF
  */
-public class Persona {
+public class Persona implements Serializable {
     protected String dni;
     protected String nombre;
     protected long telefono;
