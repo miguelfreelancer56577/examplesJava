@@ -20,6 +20,7 @@ public class Test {
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
+		sc.useDelimiter("\n");
 //		instance to file
 		File file = new File("contacts.obj");
 		file.createNewFile();
@@ -45,7 +46,7 @@ public class Test {
                 System.out.println("3.- Eliminar Persona");
                 System.out.println("4.- Mostrar todas las Personas");
                 System.out.println("5.- Salir");
-                op = sc.nextInt();
+                op = Integer.parseInt(sc.next().trim());
                 switch(op){
                     case 1:
                         System.out.println("Ingrese el Dni");
@@ -53,7 +54,7 @@ public class Test {
                         System.out.println("Ingrese el Nombre");
                         nombre = sc.next();
                         System.out.println("Ingrese el Telefono");
-                        telefono = sc.nextLong();
+                        telefono = Long.parseLong(sc.next().trim());
                         if(ag.setPersonas(dni, new Persona(dni, nombre, telefono))){
                             System.out.println("La persona se agrego con exito.");
                         }else{
