@@ -1,3 +1,4 @@
+import java.io.Console;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -7,15 +8,14 @@ public class App {
 
 	public static void main(String[] args) {
 
-		int x = 5;
-		App p = new App();
-		p.doStuff(x);
-		System.out.print(" main x = " + x);
+
+		Console c = System.console();
+		
+		String s = c.readLine();
+		
+		String s = c.readLine("%s", "name ");
+		
 		
 	}
 	
-	void doStuff(int x) {
-		System.out.print(" doStuff x = " + x++);
-		}
-
 }
