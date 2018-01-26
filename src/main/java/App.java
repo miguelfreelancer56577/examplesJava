@@ -14,18 +14,35 @@ public class App {
 	public static void main(String[] args) {
 
 
-		TreeSet<Integer> s = new TreeSet<Integer>();
-		TreeSet<Integer> subs = new TreeSet<Integer>();
+		TreeSet<String> s = new TreeSet<>();
+		TreeSet<String> subs = new TreeSet<>();
 		
 		for(int i = 806; i < 813; i++)
-			if(i%2 == 0) s.add(i);
+			if(i%2 == 0) s.add("a"+i);
 		
 		for(int i = 606; i < 613; i++)
-			if(i%2 == 0) s.add(i);
+			if(i%2 == 0) s.add("a"+i);
 		
-		subs = (TreeSet)s.subSet(608, true, 611, true);
-		s.add(609);
+		subs = (TreeSet)s.subSet("a1", true, "a4", true);
+		
+		s.add("a"+1);
+		
 		System.out.println(s + " " + subs);
+		
+		TreeSet<String> authors = new TreeSet<String>();
+		
+	    authors.add("Andreas Gryphius");
+	    authors.add("Fjodor Michailowitsch Dostojewski");
+	    authors.add("Alexander Puschkin");
+	    authors.add("Ruslana Lyzhichko");
+	    authors.add("Wladimir Klitschko");
+	    authors.add("Andrij Schewtschenko");
+	    authors.add("Wayne Gretzky");
+	    authors.add("Johann Jakob Christoffel");
+	    authors.add("Milla Jovovich");
+	    authors.add("Taras Schewtschenko");
+	    
+	    System.out.println(authors.subSet("Milla", "Wladimir"));
 		
 	}
 
