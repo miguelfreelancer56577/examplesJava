@@ -6,24 +6,26 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Comparator;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class App {
 	
 
 	public static void main(String[] args) {
 
-		Set<Integer> set = new HashSet<Integer>();
-		Integer i1 = 45;
-		Integer i2 = 46;
-		set.add(i1);
-		set.add(i1);
-		set.add(i2); 
-		System.out.print(set.size() + " ");
-		set.remove(i1); 
-		System.out.print(set.size() + " ");
-		i2 = 47;
-		set.remove(i2); 
-		System.out.print(set.size() + " ");
+
+		TreeSet<Integer> s = new TreeSet<Integer>();
+		TreeSet<Integer> subs = new TreeSet<Integer>();
+		
+		for(int i = 806; i < 813; i++)
+			if(i%2 == 0) s.add(i);
+		
+		for(int i = 606; i < 613; i++)
+			if(i%2 == 0) s.add(i);
+		
+		subs = (TreeSet)s.subSet(608, true, 611, true);
+		s.add(609);
+		System.out.println(s + " " + subs);
 		
 	}
 
