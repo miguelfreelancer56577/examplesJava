@@ -1,6 +1,10 @@
 package mangelt.orm._1Z0851;
 
 public class OverRead {
+	
+	interface test{
+		int VALUE = 0;
+	}
 
 	public static void main(String[] args) {
 		
