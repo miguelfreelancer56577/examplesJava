@@ -8,6 +8,28 @@ public class ClassA {
 		numberOfinstances = number;
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numberOfinstances;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ClassA other = (ClassA) obj;
+		if (numberOfinstances != other.numberOfinstances)
+			return false;
+		return true;
+	}
+
 	static class ExtendedA extends ClassA{
 		private ExtendedA(int passNumber){
 			super(passNumber);
