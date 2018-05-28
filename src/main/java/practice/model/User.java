@@ -10,16 +10,16 @@ import java.io.Serializable;
 
 public class User extends Parent implements Serializable {
 
-	private transient String name;
-	private String surname;
-	public static String gender = "M";
+//	private transient String name;
+//	private String surname;
+//	public static String gender = "M";
+//	
+//	private static final long serialversionUID = 45L;
 	
-	private static final long serialversionUID = 45L;
-	
-	public User(String name, String surname) {
-		super();
-		this.name = name;
-		this.surname = surname;
+	public User() {
+		System.out.print("d");
+//		this.name = name;
+//		this.surname = surname;
 	}
 	
 	
@@ -39,8 +39,8 @@ public class User extends Parent implements Serializable {
 	
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		
-		File file = new File("User.obj");
-		User u = null;
+		File file = new File("Admin.obj");
+		Admin admin = new Admin();
 		
 //			file.createNewFile();
 //			
@@ -48,23 +48,24 @@ public class User extends Parent implements Serializable {
 //			
 //			u.age = 40;
 //			
-//			FileOutputStream fos= new FileOutputStream(file);
-//			ObjectOutputStream contacts = new ObjectOutputStream(fos);
-//			contacts.reset();
-//			contacts.writeObject(u);
-//			contacts.close();
+			FileOutputStream fos= new FileOutputStream(file);
+			ObjectOutputStream contacts = new ObjectOutputStream(fos);
+			contacts.reset();
+			contacts.writeObject(admin);
+			contacts.close();
 			
 //			u = null;
 			
 			FileInputStream input = new FileInputStream(file);
 			ObjectInputStream oInput = new ObjectInputStream(input);
-			u = (User)oInput.readObject();
+			admin = (Admin)oInput.readObject();
 			
 	}
 
-	@Override
-	public String toString() {
-		return "User [name=" + name + ", surname=" + surname + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "User [name=" + name + ", surname=" + surname + "]";
+//	}
 	
 }
+class Admin extends User {}	
